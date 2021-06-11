@@ -36,7 +36,7 @@
            SUBTRACT 1 FROM SELL-IN.
 
            IF SELL-IN < 0 AND QUALITY > 0
-             SUBTRACT 2 FROM QUALITY
+             SUBTRACT 1 FROM QUALITY
            END-IF.
 
            GOBACK.
@@ -86,7 +86,7 @@
            SUBTRACT 1 FROM SELL-IN.
 
            IF SELL-IN < 0 AND QUALITY > 0
-             SUBTRACT 4 FROM QUALITY
+             SUBTRACT 2 FROM QUALITY
            END-IF.
 
            GOBACK.
