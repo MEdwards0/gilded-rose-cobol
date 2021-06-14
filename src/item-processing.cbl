@@ -16,7 +16,7 @@
           *>  IF ITEM-NAME = '+5 Dexterity Vest' OR 
           *>    'Elixir of the Mongoose' GO TO 0100-normal-item.
            
-           IF ITEM-NAME(1:4) = 'Aged' GO TO 0110-aged-brie.
+           IF ITEM-NAME(1:4) = 'Aged' GO TO 0110-aged-item.
 
            IF ITEM-NAME = 
              'Sulfuras, Hand of Ragnaros' GO TO 0130-sulfuras.
@@ -41,7 +41,7 @@
 
            GOBACK.
            
-       0110-aged-brie SECTION.
+       0110-aged-item SECTION.
            IF QUALITY < 50
              ADD 1 TO QUALITY
            END-IF.
@@ -87,6 +87,10 @@
 
            IF SELL-IN < 0 AND QUALITY > 0
              SUBTRACT 2 FROM QUALITY
+           END-IF.
+
+           IF QUALITY < 0 
+             MOVE 0 TO QUALITY
            END-IF.
 
            GOBACK.
